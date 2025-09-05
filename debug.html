@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Python Ghar</title>
+</head>
+<body>
+    <h1>Debug Test</h1>
+    <div id="test">Initial content</div>
+    <div id="status">Checking...</div>
+    
+    <script>
+        // Check if the page is loading correctly
+        document.getElementById('status').textContent = 'JavaScript is running';
+        
+        // Try to load the main script
+        const script = document.createElement('script');
+        script.src = 'https://parash5664.github.io/python-ghar/assets/index-CayVSkvl.js';
+        script.onload = function() {
+            document.getElementById('status').textContent = 'Main script loaded successfully';
+        };
+        script.onerror = function() {
+            document.getElementById('status').textContent = 'Error loading main script';
+        };
+        document.head.appendChild(script);
+        
+        // Check if React is available
+        setTimeout(() => {
+            if (typeof window.React !== 'undefined') {
+                document.getElementById('status').textContent += ' - React is available';
+            } else {
+                document.getElementById('status').textContent += ' - React not available';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
