@@ -8,6 +8,19 @@ import subprocess
 import sys
 import webbrowser
 import time
+import socket
+
+def get_ip_address():
+    """Get the local IP address"""
+    try:
+        # Connect to a remote server to determine local IP
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.connect(("8.8.8.8", 80))
+            ip = s.getsockname()[0]
+        return ip
+    except Exception:
+        # Fallback to localhost
+        return "localhost"
 
 def check_python():
     """Check if Python is installed"""
@@ -30,16 +43,26 @@ def install_requirements():
 def launch_gradio():
     """Launch the Gradio app"""
     try:
+        # Get IP address
+        ip = get_ip_address()
+        port = 7860
+        
         print("🚀 Launching Gradio app...")
         print("📝 Please make sure you have set your Hugging Face token:")
         print("   export HF_TOKEN=your_token_here")
         print("")
+        print(f"🌐 Access the app at:")
+        print(f"   Local: http://localhost:{port}")
+        print(f"   Network: http://{ip}:{port}")
+        print("")
+        print("💡 To access from other devices on your network, use the Network URL above")
+        print("")
         
-        # Open browser after a short delay
+        # Open browser to localhost after a short delay
         def open_browser():
             time.sleep(3)
-            webbrowser.open("http://localhost:7860")
-            print("🌐 Opening browser at http://localhost:7860")
+            webbrowser.open(f"http://localhost:{port}")
+            print("📂 Browser opened to local address")
         
         # Start browser opener in background
         import threading
