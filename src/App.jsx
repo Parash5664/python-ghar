@@ -1,103 +1,60 @@
-import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
-import Dashboard from './components/Dashboard';
-import Learn from './components/Learn';
-import Practice from './components/Practice';
-import RunCode from './components/RunCode';
-import Profile from './components/Profile';
-import Login from './components/Login';
-import Signup from './components/Signup';
+// src/App.jsx
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('dashboard');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [authMode, setAuthMode] = useState('login'); // 'login' or 'signup'
+import React from 'react';
+import './App.css'; // Ensure you have an App.css for custom styles
 
-  // Handle hash-based navigation
-  useEffect(() => {
-    const handleHashChange = () => {
-      // GitHub Pages SPA fix - check if we're dealing with the redirect query
-      const search = window.location.search;
-      if (search.startsWith('?/')) {
-        // Extract the actual path from the query parameter
-        const path = search.substring(2);
-        const parts = path.split('&');
-        const actualPath = parts[0];
-        
-        // Update the URL to the proper hash format
-        if (actualPath === 'signup') {
-          window.location.hash = '#signup';
-        } else if (actualPath === 'login') {
-          window.location.hash = '#login';
-        }
-        // Remove the query parameters
-        window.history.replaceState({}, document.title, '/');
-      }
-      
-      if (window.location.hash === '#signup') {
-        setAuthMode('signup');
-      } else if (window.location.hash === '#login') {
-        setAuthMode('login');
-      }
-    };
-
-    // Check initial hash
-    handleHashChange();
-    
-    // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
-
-  const renderPage = () => {
-    if (!isAuthenticated) {
-      if (authMode === 'signup') {
-        return <Signup onSignup={() => {
-          setIsAuthenticated(true);
-          setAuthMode('login');
-          window.location.hash = '';
-        }} />;
-      }
-      return <Login onLogin={() => {
-        setIsAuthenticated(true);
-        window.location.hash = '';
-      }} />;
-    }
-
-    switch (currentPage) {
-      case 'dashboard':
-        return <Dashboard />;
-      case 'learn':
-        return <Learn />;
-      case 'practice':
-        return <Practice />;
-      case 'run-code':
-        return <RunCode />;
-      case 'profile':
-        return <Profile />;
-      default:
-        return <Dashboard />;
-    }
-  };
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {isAuthenticated && (
-        <Sidebar 
-          currentPage={currentPage} 
-          setCurrentPage={setCurrentPage} 
-          darkMode={false} 
-          setDarkMode={() => {}} 
-        />
-      )}
-      <div className={isAuthenticated ? "ml-64" : ""}>
-        {renderPage()}
-      </div>
+    <div className="app-container">
+      <header>
+        <img src="/logo.png" alt="Logo" className="logo" /> {/* Add your logo */}
+        <h1>Python-Ghar (Home of Python Learning)</h1>
+        <p>Note: All code is designed to be as simple as possible for absolute beginners.</p>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#code-generator">Ai-Code Generator</a></li>
+          <li><a href="#learning-resources">Learning Resources</a></li>
+          <li><a href="#code-playground" className="active">Code Playground</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="code-playground">
+          <h2>Code Playground (Jupyter Notebook Style)</h2>
+          <p>Practice Python coding with interactive input support!</p>
+          <p>Type your Python code below and click "Run Code" to execute it. You can use input() functions to get user input.</p>
+
+          <div className="code-playground">
+            <div className="code-editor">
+              <textarea defaultValue={`
+# Jupyter Notebook Style Python Practice
+# Example with input() functions:
+name = input('Enter your name: ')
+print(f"Hello, {name}!")
+
+# Example with numeric input:
+num = int(input("Enter a number: "))
+print(f"Square of {num} is {num**2}")
+              `}></textarea>
+              <button>Run Code</button>
+            </div>
+
+            <div className="output">
+              <pre></pre>
+            </div>
+
+            <div className="simulate-inputs">
+              <h3>Simulate Inputs (optional)</h3>
+              <p>Enter values to simulate user inputs (one per line):</p>
+              <textarea placeholder="Input Values (one per line)"></textarea>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
