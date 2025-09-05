@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Python Ghar</title>
+</head>
+<body>
+    <h1>Testing Python Ghar Deployment</h1>
+    <p>If you can see this message, the basic HTML is working.</p>
+    <p>If the full application doesn't load, there might be a JavaScript error.</p>
+    
+    <script>
+        // Test if we can access the site's JavaScript
+        fetch('https://parash5664.github.io/python-ghar/assets/index-CayVSkvl.js')
+            .then(response => {
+                if (response.ok) {
+                    console.log('JavaScript file is accessible');
+                } else {
+                    console.log('JavaScript file is not accessible');
+                }
+            })
+            .catch(error => {
+                console.log('Error accessing JavaScript file:', error);
+            });
+    </script>
+</body>
+</html>
