@@ -38,8 +38,8 @@ def launch_gradio():
         # Open browser after a short delay
         def open_browser():
             time.sleep(3)
-            webbrowser.open("http://localhost:7863")
-            print("🌐 Opening browser at http://localhost:7863")
+            webbrowser.open("http://localhost:7860")
+            print("🌐 Opening browser at http://localhost:7860")
         
         # Start browser opener in background
         import threading
