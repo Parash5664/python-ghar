@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradio App - Python Ghar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .steps {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            padding-left: 20px;
+        }
+        .steps li {
+            margin-bottom: 15px;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Python Ghar - Gradio AI Code Tutor</h1>
+        
+        <div class="warning">
+            <h2>⚠️ Important Notice</h2>
+            <p>The Gradio application <strong>cannot</strong> run directly on GitHub Pages because:</p>
+            <ul>
+                <li>GitHub Pages only serves static files</li>
+                <li>Gradio apps require a Python backend server</li>
+                <li>GitHub Pages has no Python runtime environment</li>
+            </ul>
+        </div>
+        
+        <div class="success">
+            <h2>✅ How to Access the Gradio App</h2>
+            <p>To use the full Gradio application with AI features, follow these steps:</p>
+        </div>
+        
+        <div class="steps">
+            <ol>
+                <li><strong>Clone the repository:</strong>
+                    <br><code>git clone https://github.com/Parash5664/python-ghar.git</code>
+                    <br><code>cd python-ghar</code>
+                </li>
+                <li><strong>Install Python dependencies:</strong>
+                    <br><code>pip install -r requirements.txt</code>
+                </li>
+                <li><strong>Run the Gradio app:</strong>
+                    <br><code>python gradio_app.py</code>
+                </li>
+                <li><strong>Open your browser:</strong>
+                    <br>Go to <a href="http://localhost:7863" target="_blank">http://localhost:7863</a>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="note">
+            <h2>📝 Additional Information</h2>
+            <p><strong>Hugging Face API Tokens:</strong> To use the AI features, you'll need Hugging Face API tokens:</p>
+            <ol>
+                <li>Sign up at <a href="https://huggingface.co/join" target="_blank">huggingface.co</a></li>
+                <li>Get your API token from <a href="https://huggingface.co/settings/tokens" target="_blank">Settings → Access Tokens</a></li>
+                <li>Set the token as an environment variable: <code>export HF_TOKEN=your_token_here</code></li>
+            </ol>
+            <p><strong>Alternative Deployment:</strong> For online access, consider deploying to <a href="https://huggingface.co/spaces" target="_blank">Hugging Face Spaces</a>, which is specifically designed for Gradio apps.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="btn">← Back to Main Site</a>
+            <a href="https://github.com/Parash5664/python-ghar" class="btn" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -22,21 +22,28 @@ An educational platform designed to help users learn Python programming interact
 
 ## How to Run Locally
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Parash5664/python-ghar.git
-   cd python-ghar
-   ```
+### Option 1: Using the Launcher Script (Recommended)
+```bash
+# Clone the repository
+git clone https://github.com/Parash5664/python-ghar.git
+cd python-ghar
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Run the launcher
+python launch_gradio.py
+```
 
-3. Run the Gradio app:
-   ```bash
-   python gradio_app.py
-   ```
+### Option 2: Manual Installation
+```bash
+# Clone the repository
+git clone https://github.com/Parash5664/python-ghar.git
+cd python-ghar
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Gradio app
+python gradio_app.py
+```
 
 4. Open your browser to http://localhost:7863
 
