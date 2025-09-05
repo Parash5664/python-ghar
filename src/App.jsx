@@ -16,6 +16,24 @@ function App() {
   // Handle hash-based navigation
   useEffect(() => {
     const handleHashChange = () => {
+      // GitHub Pages SPA fix - check if we're dealing with the redirect query
+      const search = window.location.search;
+      if (search.startsWith('?/')) {
+        // Extract the actual path from the query parameter
+        const path = search.substring(2);
+        const parts = path.split('&');
+        const actualPath = parts[0];
+        
+        // Update the URL to the proper hash format
+        if (actualPath === 'signup') {
+          window.location.hash = '#signup';
+        } else if (actualPath === 'login') {
+          window.location.hash = '#login';
+        }
+        // Remove the query parameters
+        window.history.replaceState({}, document.title, '/');
+      }
+      
       if (window.location.hash === '#signup') {
         setAuthMode('signup');
       } else if (window.location.hash === '#login') {
