@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Ghar - Gradio App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #3b82f6;
+            text-align: center;
+        }
+        .info {
+            background-color: #e0f2fe;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .instructions {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .note {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Python Ghar - Gradio App</h1>
+        
+        <div class="info">
+            <h2>About This App</h2>
+            <p>This is the Gradio interface for Python Ghar, an AI-powered Python learning platform. The app provides:</p>
+            <ul>
+                <li>AI Code Generation</li>
+                <li>Code Explanation</li>
+                <li>Interactive Code Execution</li>
+                <li>Learning Resources</li>
+            </ul>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Run Locally</h2>
+            <p>To use this application locally:</p>
+            <ol>
+                <li>Clone the repository: <code>git clone https://github.com/Parash5664/python-ghar.git</code></li>
+                <li>Navigate to the project directory: <code>cd python-ghar</code></li>
+                <li>Install Python dependencies: <code>pip install -r requirements.txt</code></li>
+                <li>Run the Gradio app: <code>python gradio_app.py</code></li>
+                <li>Open your browser and go to: <code>http://localhost:7863</code></li>
+            </ol>
+        </div>
+        
+        <div class="note">
+            <h2>Important Note</h2>
+            <p>Gradio applications cannot be directly deployed to GitHub Pages because they require a Python backend server. GitHub Pages only serves static files.</p>
+            <p>To use the full Gradio application:</p>
+            <ul>
+                <li>Run it locally using the instructions above</li>
+                <li>Deploy it to Hugging Face Spaces (recommended for Gradio apps)</li>
+                <li>Deploy it to a cloud platform like Heroku, Render, or Railway</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <h2>Gradio App Preview</h2>
+            <p>When running locally, the app will appear here:</p>
+            <div style="border: 2px dashed #ccc; border-radius: 10px; padding: 40px; margin: 20px 0;">
+                <p style="font-size: 18px; color: #666;">Gradio Application Interface</p>
+                <p style="color: #999;">(Runs on localhost:7863 when executed locally)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
