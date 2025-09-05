@@ -1,0 +1,6 @@
+# Hugging Face Spaces Configuration
+title: "Python Ghar - AI Code Tutor"
+sdk: "docker"
+sdk_version: "3.9"
+app_file: "gradio_app.py"
+license: "mit"
