@@ -13,9 +13,13 @@ export default defineConfig({
         manualChunks: undefined,
       },
     },
+    chunkSizeWarningLimit: 2000, // Increase limit for Pyodide
   },
   preview: {
     host: true,
     port: 4173,
+  },
+  optimizeDeps: {
+    exclude: ['pyodide'],
   },
 });
